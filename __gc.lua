@@ -19,7 +19,7 @@ if _VERSION == "Lua 5.1" then
 				if fin then return fin(t) end
 			end
 		end
-		smt(t,mt)
+		return smt(t,mt)
 	end
 end
 
