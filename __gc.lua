@@ -8,7 +8,7 @@ if _VERSION == "Lua 5.1" then
 	local np = assert(newproxy)
 
 	return function(t, mt)
-		if rg(mt, "__gc") and not rg(t,"__gc_proxy") then
+		if mt ~= nil and rg(mt, "__gc") and not rg(t,"__gc_proxy") then
 			local p = np(true)
 			rs(t, proxy_key, p)
 			gmt(p).__gc = function()
